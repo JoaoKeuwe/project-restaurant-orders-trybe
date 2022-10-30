@@ -11,7 +11,9 @@ class TrackOrders:
         self.myList.append({day, order, customer})
 
     def get_most_ordered_dish_per_customer(self, customer):
-        pass
+        list = [orders[1] for orders in self.myList
+                 if orders[2] == customer]
+        return max(list, key=list.count)
 
     def get_never_ordered_per_customer(self, customer):
         pass
@@ -20,7 +22,9 @@ class TrackOrders:
         pass
 
     def get_busiest_day(self):
-        pass
+        list = [orders[0] for orders in self.myList]
+        return max(list, key=list.count)
 
     def get_least_busy_day(self):
-        pass
+        list = [orders[0] for orders in self.minha_list]
+        return min(list, key=list.count)
