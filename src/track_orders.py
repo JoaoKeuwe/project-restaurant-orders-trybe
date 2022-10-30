@@ -28,7 +28,6 @@ class TrackOrders:
                 reponse = total.difference(food)
                 return reponse
     
-
     def get_busiest_day(self):
         dias = {}
         for _cust, _order, days in self.data:
