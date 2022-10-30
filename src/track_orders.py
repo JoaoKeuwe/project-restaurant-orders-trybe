@@ -17,9 +17,10 @@ class TrackOrders:
 
     def get_never_ordered_per_customer(self, customer):
         foods = [orders[1] for orders in self.myList]
-        customerFoods = [orders[1] for orders in self.myList
-                         if customer == orders[2]]
-        return set(set(foods) - set(customerFoods))
+        foodsCustomer = [orders[1] for orders in self.myList
+                            if customer == orders[2]]
+
+        return set(set(foods) - set(foodsCustomer))
 
     def get_days_never_visited_per_customer(self, customer):
         pass
