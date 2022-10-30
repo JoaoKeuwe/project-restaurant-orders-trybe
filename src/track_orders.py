@@ -18,7 +18,7 @@ class TrackOrders:
     def get_never_ordered_per_customer(self, customer):
         foods = [orders[1] for orders in self.myList]
         foodsCustomer = [orders[1] for orders in self.myList
-                            if customer == orders[2]]
+                         if customer == orders[2]]
 
         return set(set(foods) - set(foodsCustomer))
 
