@@ -17,3 +17,15 @@ class TrackOrders:
                 foods[comida] += 1
         response = max(foods, key=foods.get)
         return response
+    
+    def get_never_ordered_per_customer(self, customer):
+        total = set()
+        food = set()
+        for customer, food, _ in self.data:
+            total.add(food)
+            if customer == customer:
+                food.add(food)
+        reponse = total.difference(food)
+        return reponse
+
+   
