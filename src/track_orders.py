@@ -12,11 +12,15 @@ class TrackOrders:
 
     def get_most_ordered_dish_per_customer(self, customer):
         list = [orders[1] for orders in self.myList
-                 if orders[2] == customer]
+                if orders[2] == customer]
         return max(list, key=list.count)
 
     def get_never_ordered_per_customer(self, customer):
-        pass
+        foods = [orders[1] for orders in self.myList]
+        customerFoods = [orders[1] for orders in self.myList
+                            if customer == orders[2]]
+
+        return set(set(foods) - set(customerFoods ))
 
     def get_days_never_visited_per_customer(self, customer):
         pass
