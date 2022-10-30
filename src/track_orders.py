@@ -34,8 +34,7 @@ class TrackOrders:
             if client == customer and order == food:
                 orders += 1
         return orders
-    
-    
+
     def get_days_never_visited_per_customer(self, customer):
         totalDias = set()
         dias = set()
@@ -64,12 +63,5 @@ class TrackOrders:
 
         response = min(dias, key=dias.get)
         return response
-
-    def get_orders_per_customer(self, customer, order):
-        pedido = 0
-        for cliente, food, _day in self.data:
-            if cliente == customer and order == food:
-                pedido += 1
-        return pedido
 
    
